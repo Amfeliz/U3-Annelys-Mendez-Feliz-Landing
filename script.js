@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   CONECTANDO — Digital  |  script.js  v3
+   CONECTANDO — Digital  |  script.js  v4
    ═══════════════════════════════════════════════ */
 
 /* ────────────────────────────────────────────────
@@ -21,7 +21,7 @@ const SECTIONS = [
   'section-fundamento',
   'section-conceptos',
   'section-galeria',
-  'section-interacciones',
+  'section-conceptos-clave',
   'section-cta'
 ];
 const dots = document.querySelectorAll('.header-dots span');
@@ -59,14 +59,13 @@ document.addEventListener('mousemove', e => {
 
   /* Piezas: se mueven ligeramente en dirección opuesta al cursor */
   if (heroPieces) {
-    heroPieces.style.transform =
-      `translate(${cx * -10}px, ${cy * -6}px)`;
+    heroPieces.style.transform = `translate(${cx * -10}px, ${cy * -6}px)`;
   }
 
   /* Verbos: ligero desplazamiento horizontal alternado */
   verbLines.forEach((v, i) => {
     const dir = i % 2 === 0 ? 1 : -1;
-    v.style.transform = `translateX(${cx * 8 * dir}px)`;
+    v.style.transform = `translateX(${cx * 12 * dir}px)`;
   });
 });
 
@@ -94,32 +93,14 @@ document.querySelectorAll('.concept-card').forEach((card, i) => {
 });
 
 /* ────────────────────────────────────────────────
-   TABLA DE INTERACCIONES — highlight fila
-   ──────────────────────────────────────────────── */
-const ROW_COLORS = [
-  'rgba(255,237,0,0.04)',
-  'rgba(0,159,227,0.04)',
-  'rgba(230,0,126,0.04)',
-  'rgba(255,237,0,0.04)',
-  'rgba(0,159,227,0.04)',
-  'rgba(230,0,126,0.04)',
-];
-
-document.querySelectorAll('.it-row').forEach((row, i) => {
-  const bg = ROW_COLORS[i % ROW_COLORS.length];
-  row.addEventListener('mouseenter', () => row.style.background = bg);
-  row.addEventListener('mouseleave', () => row.style.background = '');
-});
-
-/* ────────────────────────────────────────────────
    CTA — efecto magnético suave
    ──────────────────────────────────────────────── */
 const ctaBtn = document.getElementById('cta-btn');
 if (ctaBtn) {
   ctaBtn.addEventListener('mousemove', e => {
     const rect = ctaBtn.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width  - 0.5) * 10;
-    const y = ((e.clientY - rect.top)  / rect.height - 0.5) * 6;
+    const x = ((e.clientX - rect.left) / rect.width  - 0.5) * 15;
+    const y = ((e.clientY - rect.top)  / rect.height - 0.5) * 10;
     ctaBtn.style.transform = `translate(${x}px, ${y}px)`;
   });
   ctaBtn.addEventListener('mouseleave', () => {
