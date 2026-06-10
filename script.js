@@ -1,9 +1,12 @@
 /* ═══════════════════════════════════════════════
-   CONECTANDO — Digital  |  script.js  v4
+   CONECTANDO — Digital  |  script.js  v6
    ═══════════════════════════════════════════════ */
 
+/* Requerimos el Plugin de Texto para la animación Typewriter */
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
 /* ────────────────────────────────────────────────
-   SCROLL REVEAL
+   SCROLL REVEAL (Apariciones Generales)
    ──────────────────────────────────────────────── */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -14,13 +17,35 @@ const revealObs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 /* ────────────────────────────────────────────────
-   HEADER DOTS — sección activa + click navega
+   EFECTO TYPEWRITER (TRANSFORMA, DECIDE, AVANZA)
+   ──────────────────────────────────────────────── */
+const verbLines = document.querySelectorAll('.verb-line');
+verbLines.forEach((verb, i) => {
+  const textToType = verb.getAttribute('data-text');
+  
+  ScrollTrigger.create({
+    trigger: ".fundamento-verbs",
+    start: "top 75%",
+    onEnter: () => {
+      gsap.to(verb, {
+        duration: 1,
+        text: textToType,
+        ease: "power1.inOut",
+        delay: i * 0.6 // Cascada progresiva
+      });
+    }
+  });
+});
+
+/* ────────────────────────────────────────────────
+   HEADER DOTS — Navegación de 7 secciones
    ──────────────────────────────────────────────── */
 const SECTIONS = [
   'section-hero',
   'section-fundamento',
   'section-conceptos',
   'section-galeria',
+  'section-partitura',
   'section-conceptos-clave',
   'section-cta'
 ];
@@ -48,10 +73,9 @@ dots.forEach((dot, i) => {
 });
 
 /* ────────────────────────────────────────────────
-   PARALLAX SUAVE — piezas hero + verbos
+   PARALLAX SUAVE — piezas hero
    ──────────────────────────────────────────────── */
 const heroPieces = document.getElementById('hero-pieces');
-const verbLines  = document.querySelectorAll('.verb-line');
 
 document.addEventListener('mousemove', e => {
   const cx = (e.clientX / window.innerWidth  - 0.5);
@@ -61,16 +85,10 @@ document.addEventListener('mousemove', e => {
   if (heroPieces) {
     heroPieces.style.transform = `translate(${cx * -10}px, ${cy * -6}px)`;
   }
-
-  /* Verbos: ligero desplazamiento horizontal alternado */
-  verbLines.forEach((v, i) => {
-    const dir = i % 2 === 0 ? 1 : -1;
-    v.style.transform = `translateX(${cx * 12 * dir}px)`;
-  });
 });
 
 /* ────────────────────────────────────────────────
-   CONCEPT CARDS — color en hover según posición
+   CONCEPT CARDS — color en hover
    ──────────────────────────────────────────────── */
 const CARD_COLORS = [
   '#FFED00','#E6007E','#009FE3',
@@ -114,11 +132,12 @@ if (ctaBtn) {
 document.querySelectorAll('.gal-img').forEach(img => {
   img.addEventListener('mouseenter', () => {
     img.style.transition = 'transform 0.4s ease';
-    img.querySelector('.board-sim, .box-sim, .box2-sim') &&
-      (img.querySelector('.board-sim, .box-sim, .box2-sim').style.transform = 'scale(1.03)');
+    // Zoom suave solo a la imagen de fondo (la foto)
+    const photo = img.querySelector('.gal-photo');
+    if (photo) photo.style.transform = 'scale(1.05)';
   });
   img.addEventListener('mouseleave', () => {
-    img.querySelector('.board-sim, .box-sim, .box2-sim') &&
-      (img.querySelector('.board-sim, .box-sim, .box2-sim').style.transform = '');
+    const photo = img.querySelector('.gal-photo');
+    if (photo) photo.style.transform = '';
   });
 });

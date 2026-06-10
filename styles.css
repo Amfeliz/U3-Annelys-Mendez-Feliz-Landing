@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   CONECTANDO — Digital  |  styles.css  v4 (Editorial & Spacious)
+   CONECTANDO — Digital  |  styles.css  v7
    ═══════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap');
@@ -15,12 +15,11 @@
   --gray-card: #141414;
   --gray-text: #4a4a4a;
   --dim:       rgba(255,255,255,0.45);
-  --text-soft: rgba(255,255,255,0.75); /* Nuevo color de texto más suave */
+  --text-soft: rgba(255,255,255,0.75); 
   --border:    rgba(255,255,255,0.10);
   --mono:      'Space Mono', monospace;
   --disp:      'Syne', sans-serif;
   
-  /* Incrementamos el ancho máximo y el padding lateral drásticamente */
   --max:       1400px; 
   --pad:       clamp(40px, 8vw, 140px); 
 }
@@ -121,11 +120,10 @@ body {
 .header-dots span:hover { color: var(--white); }
 
 /* ════════════════════════════════════════════════
-   UTILIDADES & ESPACIADO DE SECCIONES (Aumentado)
+   UTILIDADES & ESPACIADO DE SECCIONES 
    ════════════════════════════════════════════════ */
 .section-pad {
-  /* ¡Mucho más espacio vertical! 200px arriba y abajo */
-  padding: 200px var(--pad); 
+  padding: 100px var(--pad); 
   max-width: calc(var(--max) + var(--pad) * 2);
   margin: 0 auto;
   width: 100%;
@@ -139,7 +137,7 @@ body {
   color: var(--dim);
   text-align: right;
   display: block;
-  margin-bottom: 80px; /* Más espacio bajo la etiqueta */
+  margin-bottom: 60px; 
 }
 
 /* ════════════════════════════════════════════════
@@ -157,7 +155,7 @@ body {
 .reveal-d4           { transition-delay: 0.60s; }
 
 /* ════════════════════════════════════════════════
-   01 — HERO
+   01 — HERO 
    ════════════════════════════════════════════════ */
 .section-hero {
   min-height: 100vh;
@@ -172,23 +170,30 @@ body {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 80px; /* Mayor separación entre el título y las piezas */
+  gap: 80px; 
   flex: 1;
 }
 
 .hero-title {
   font-family: var(--disp);
-  font-size: clamp(80px, 14vw, 180px);
+  font-size: clamp(60px, 10vw, 130px); 
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.86;
   color: var(--white);
+  transition: color 0.4s ease, letter-spacing 0.4s ease;
+  cursor: default;
+}
+
+.hero-title:hover {
+  color: var(--yellow);
+  letter-spacing: 0.04em; 
 }
 
 .piece-grid {
   display: grid;
-  grid-template-columns: repeat(4, 42px);
-  grid-template-rows:    repeat(6, 42px);
+  grid-template-columns: repeat(3, 42px);
+  grid-template-rows:    repeat(2, 42px);
   gap: 4px;
 }
 
@@ -196,17 +201,17 @@ body {
 .pc--y        { background: var(--yellow); }
 .pc--p        { background: var(--pink);   }
 .pc--b        { background: var(--blue);   }
-.pc--e        { background: transparent;   }
 
 .hero-tagline {
   display: flex;
   align-items: center;
   gap: 20px;
   font-family: var(--disp);
-  font-size: 14px;
-  color: var(--text-soft);
-  line-height: 1.6;
-  padding: 64px 0 80px;
+  font-size: 14px;         
+  font-weight: 400;        
+  line-height: 2.1;        
+  color: var(--text-soft); 
+  padding: 40px 0 60px;
   max-width: 600px;
 }
 
@@ -221,9 +226,7 @@ body {
 /* ════════════════════════════════════════════════
    02 — FUNDAMENTO
    ════════════════════════════════════════════════ */
-.fundamento-verbs {
-  margin-bottom: 80px; /* Mayor espacio antes del texto */
-}
+.fundamento-verbs { margin-bottom: 50px; } 
 
 .verb-line {
   display: block;
@@ -232,7 +235,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.0;
-  transition: transform 0.12s ease-out;
+  min-height: 1.2em; 
 }
 .verb-white { color: var(--white); }
 .verb-dark  { color: var(--gray-text); }
@@ -240,19 +243,19 @@ body {
 .fundamento-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px 140px; /* MUCHO MÁS ESPACIO ENTRE COLUMNAS */
+  gap: 60px 80px; 
 }
 
 .col-left,
 .col-right {
   display: flex;
   flex-direction: column;
-  gap: 32px; /* Más espacio entre párrafos */
+  gap: 32px; 
 }
 
 .quote-block {
-  border-left: 6px solid var(--yellow); /* Borde más fino y elegante */
-  padding: 8px 0 8px 24px; /* Más margen interior */
+  border-left: 6px solid var(--yellow); 
+  padding: 8px 0 8px 24px; 
   margin-bottom: 12px;
 }
 .quote-block p {
@@ -266,10 +269,10 @@ body {
 .body-text {
   font-family: var(--disp);
   font-size: 14px;
-  line-height: 2.1; /* Interlineado editorial más cómodo */
+  line-height: 2.1; 
   font-weight: 400;
   letter-spacing: 0.02em;
-  color: var(--text-soft); /* Color suavizado */
+  color: var(--text-soft); 
 }
 
 /* ════════════════════════════════════════════════
@@ -278,17 +281,17 @@ body {
 .concepts-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 24px; /* Mayor separación entre columnas de cards */
+  gap: 0 24px; 
   align-items: start;
 }
 
-.concepts-col        { display:flex; flex-direction:column; gap:24px; } /* Más aire vertical entre cards */
-.col-offset-1        { margin-top: 100px; }
-.col-offset-2        { margin-top: 50px; }
+.concepts-col        { display:flex; flex-direction:column; gap:24px; } 
+.col-offset-1        { margin-top: 60px; } 
+.col-offset-2        { margin-top: 30px; } 
 
 .concept-card {
   border: 1px solid var(--border);
-  padding: 32px 24px; /* Cards más amplias */
+  padding: 32px 24px; 
   background: transparent;
   transition: border-color 0.25s ease, background 0.25s ease;
   cursor: default;
@@ -319,13 +322,13 @@ body {
 }
 
 /* ════════════════════════════════════════════════
-   04 — GALERÍA DEL JUEGO
+   04 — GALERÍA DEL JUEGO (CORREGIDA)
    ════════════════════════════════════════════════ */
 .galeria-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: 320px 320px;
-  gap: 16px; /* Separación más clara entre fotos */
+  grid-template-rows: 350px 350px; /* Tamaño particular y fijo */
+  gap: 16px; 
 }
 
 .gal-main      { grid-row: 1 / 3; }
@@ -336,10 +339,22 @@ body {
   width:100%; height:100%;
   position: relative;
   overflow: hidden;
-  background: var(--gray-card);
+  background: var(--gray-card); /* El fondo actúa como marco */
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--border);
+}
+
+/* Propiedad para que las fotos se vean completas y enmarcadas */
+.gal-photo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ajusta la imagen sin recortar */
+  padding: 50px; /* Crea el efecto de marco interior */
+  z-index: 1;
 }
 
 .gal-overlay {
@@ -368,46 +383,34 @@ body {
   display: block;
 }
 
-/* Tablero simulado */
-.board-sim { display: flex; flex-direction: column; gap: 4px; padding: 24px; z-index: 1; }
-.bs-row { display:flex; gap:4px; }
-.bs-cell {
-  width:50px; height:50px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
+/* ════════════════════════════════════════════════
+   05 — PARTITURA DE INTERACCIÓN (CORREGIDA)
+   ════════════════════════════════════════════════ */
+.partitura-wrapper {
+  width: 100%;
+  /* Respeta el ancho máximo y padding de .section-pad */
+  background: var(--gray-card);
+  border: 1px dashed var(--border);
+  padding: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
 }
-.bs-y { background: var(--yellow); border-color: var(--yellow); }
-.bs-p { background: var(--pink);   border-color: var(--pink);   }
-.bs-b { background: var(--blue);   border-color: var(--blue);   }
 
-/* Caja simulada */
-.box-sim { z-index:1; width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
-.box-face {
-  width: 75%; height: 75%;
-  background: var(--black);
-  border: 1px solid rgba(255,255,255,0.12);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+.partitura-wrapper:hover {
+  transform: scale(1.02);
 }
-.box-brand { font-family: var(--disp); font-size: 20px; font-weight: 800; color: var(--white); }
-.box-pieces { display:flex; gap:6px; }
-.bp { width:24px; height:24px; }
-.bp--y { background: var(--yellow); }
-.bp--p { background: var(--pink);   }
-.bp--b { background: var(--blue);   }
 
-/* Caja 2 simulada */
-.box2-sim { z-index:1; width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
-.box2-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.box2-title { font-family: var(--disp); font-size: 14px; font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
-.box2-grid { display: grid; grid-template-columns: repeat(2, 28px); gap: 4px; }
-.b2 { width:28px; height:28px; }
-.b2--y { background: var(--yellow); }
-.b2--p { background: var(--pink);   }
-.b2--b { background: var(--blue);   }
-
+.partitura-img {
+  max-width: 100%; /* Nunca se desborda del contenedor */
+  height: auto;
+  max-height: 70vh; /* Limita la altura para que no sea inmensa */
+  object-fit: contain;
+}
 
 /* ════════════════════════════════════════════════
-   05b — CONCEPTOS TIPOGRÁFICOS ESCALONADOS
+   06 — CONCEPTOS TIPOGRÁFICOS ESCALONADOS
    ════════════════════════════════════════════════ */
 .concepts-typo {
   display: flex;
@@ -432,6 +435,8 @@ body {
   line-height: 1;
   color: var(--white);
   white-space: nowrap;
+  transition: color 0.3s ease;
+  cursor: default;
 }
 
 .typo-xl  { font-size: clamp(56px, 8vw,  100px); }
@@ -440,6 +445,14 @@ body {
 .typo-sm  { font-size: clamp(32px, 5vw,  64px); color: var(--gray-text); }
 .typo-xs  { font-size: clamp(28px, 4vw,  52px); }
 .typo-xxs { font-size: clamp(24px, 3.5vw,44px); color: var(--gray-text); }
+
+/* Efectos Hover */
+.typo-xl:hover  { color: var(--yellow) !important; }
+.typo-lg:hover  { color: var(--pink) !important; }
+.typo-md:hover  { color: var(--blue) !important; }
+.typo-sm:hover  { color: var(--yellow) !important; }
+.typo-xs:hover  { color: var(--pink) !important; }
+.typo-xxs:hover { color: var(--blue) !important; }
 
 .typo-desc {
   font-family: var(--disp);
@@ -450,7 +463,7 @@ body {
 }
 
 /* ════════════════════════════════════════════════
-   06 — CTA EXPERIMENTAL
+   07 — CTA EXPERIMENTAL
    ════════════════════════════════════════════════ */
 .section-cta {
   display: flex;
@@ -459,7 +472,7 @@ body {
 
 .cta-inner {
   border-top: 1px solid var(--border);
-  padding: 80px 0 0 0; /* Más espacio sobre el botón */
+  padding: 80px 0 0 0; 
   width: 100%;
   display: flex;
   justify-content: center;
