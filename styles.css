@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   CONECTANDO — Digital  |  styles.css  v7
+   CONECTANDO — Digital  |  styles.css  v8
    ═══════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap');
@@ -34,6 +34,49 @@ body {
   font-family: var(--disp);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* ════════════════════════════════════════════════
+   PANTALLA DE CARGA (LOADER)
+   ════════════════════════════════════════════════ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.loader-squares {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.sq {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease;
+}
+
+.loader-text {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--dim);
 }
 
 /* ════════════════════════════════════════════════
@@ -207,7 +250,7 @@ body {
   align-items: center;
   gap: 20px;
   font-family: var(--disp);
-  font-size: 14px;         
+  font-size: 18px;         
   font-weight: 400;        
   line-height: 2.1;        
   color: var(--text-soft); 
@@ -217,7 +260,7 @@ body {
 
 .tagline-bar {
   display: block;
-  width: 3px;
+  width: 5px;
   height: 50px;
   background: var(--yellow);
   flex-shrink: 0;
@@ -322,12 +365,12 @@ body {
 }
 
 /* ════════════════════════════════════════════════
-   04 — GALERÍA DEL JUEGO (CORREGIDA)
+   04 — GALERÍA DEL JUEGO (CORREGIDA Y ENMARCADA)
    ════════════════════════════════════════════════ */
 .galeria-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: 350px 350px; /* Tamaño particular y fijo */
+  grid-template-rows: 350px 350px; 
   gap: 16px; 
 }
 
@@ -339,22 +382,23 @@ body {
   width:100%; height:100%;
   position: relative;
   overflow: hidden;
-  background: var(--gray-card); /* El fondo actúa como marco */
+  background: var(--gray-card); /* Fondo gris oscuro actúa como marco */
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
 }
 
-/* Propiedad para que las fotos se vean completas y enmarcadas */
+/* La imagen real se adapta al marco sin recortarse */
 .gal-photo {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ajusta la imagen sin recortar */
-  padding: 50px; /* Crea el efecto de marco interior */
+  object-fit: contain; /* Nunca se deforma */
+  padding: 40px; /* Margen interior para que quede "enmarcada" */
   z-index: 1;
+  transition: transform 0.4s ease;
 }
 
 .gal-overlay {
@@ -363,6 +407,7 @@ body {
   padding: 24px 32px;
   background: linear-gradient(transparent, rgba(0,0,0,0.85));
   z-index: 2;
+  pointer-events: none; /* Evita que estorbe al hover de la foto */
 }
 .gal-overlay--dark { background: rgba(0,0,0,0.5); top:0; }
 
@@ -388,10 +433,9 @@ body {
    ════════════════════════════════════════════════ */
 .partitura-wrapper {
   width: 100%;
-  /* Respeta el ancho máximo y padding de .section-pad */
   background: var(--gray-card);
   border: 1px dashed var(--border);
-  padding: 40px; 
+  padding: var(--pad); /* Mismos márgenes que la página */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,9 +447,8 @@ body {
 }
 
 .partitura-img {
-  max-width: 100%; /* Nunca se desborda del contenedor */
+  max-width: 100%; 
   height: auto;
-  max-height: 70vh; /* Limita la altura para que no sea inmensa */
   object-fit: contain;
 }
 
