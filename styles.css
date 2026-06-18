@@ -318,15 +318,30 @@ body {
 /* ════════════════════════════════════════════════
    04 — GALERÍA DEL JUEGO
    ════════════════════════════════════════════════ */
-.galeria-grid { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: 350px 350px; gap: 16px; }
-.gal-main      { grid-row: 1 / 3; }
-.gal-side-top  { grid-column: 2; grid-row: 1; }
-.gal-side-bot  { grid-column: 2; grid-row: 2; }
+.galeria-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-auto-rows: 350px; 
+  gap: 16px; 
+}
+
+.gal-item {
+  width: 100%;
+  height: 100%;
+}
 
 .gal-img {
-  width:100%; height:100%; position: relative; overflow: hidden; background: var(--gray-card);
-  display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);
+  width: 100%; 
+  height: 100%; 
+  position: relative; 
+  overflow: hidden; 
+  background: var(--gray-card);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border: 1px solid var(--border);
 }
+
 .gal-photo {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   object-fit: contain; padding: 40px; z-index: 1; transition: transform 0.4s ease;
@@ -354,7 +369,13 @@ body {
    06 — CTA EXPERIMENTAL
    ════════════════════════════════════════════════ */
 .section-cta { display: flex; justify-content: center; }
-.cta-inner { border-top: 1px solid var(--border); padding: 80px 0 0 0; width: 100%; display: flex; justify-content: center; }
+.cta-inner { 
+  border-top: none; /* Borde superior eliminado según petición */
+  padding: 80px 0 0 0; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+}
 
 .cta-btn {
   display: inline-flex; align-items: center; gap: 32px; background: var(--pink); color: var(--white);
@@ -373,10 +394,44 @@ body {
 .cta-btn:hover .cta-arrow { transform: translateX(8px); }
 
 /* ════════════════════════════════════════════════
-   FOOTER
+   FOOTER (REDISEÑADO INSTITUCIONAL)
    ════════════════════════════════════════════════ */
 #site-footer {
-  padding: 40px var(--pad); border-top: 1px solid var(--border); display: flex; justify-content: space-between;
-  align-items: center; max-width: calc(var(--max) + var(--pad) * 2); margin: 0 auto;
+  padding: 60px var(--pad) 60px; 
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Línea blanca fina como divisor */
+  max-width: calc(var(--max) + var(--pad) * 2); 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alineado a la izquierda como solicitaste */
+  gap: 40px;
 }
-.footer-text { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.1em; }
+
+.footer-logos {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap; /* Para asegurar que no se rompa en pantallas pequeñas */
+}
+
+.footer-logo {
+  height: 60px; /* Tamaño prudente, puedes aumentarlo si tus archivos lo requieren */
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left; /* Garantiza la lectura de izquierda a derecha */
+  max-width: 800px; /* Para que la línea de lectura sea cómoda */
+}
+
+.footer-text-block p {
+  font-family: var(--disp);
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
