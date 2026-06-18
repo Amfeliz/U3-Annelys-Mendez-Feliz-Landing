@@ -144,7 +144,7 @@ body {
 /* Párrafos principales */
 .body-text {
   font-family: var(--disp);
-  font-size: 1.5rem; 
+  font-size: 1rem; 
   line-height: 1.8; 
   font-weight: 400;
   letter-spacing: 0.02em;
