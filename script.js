@@ -52,7 +52,7 @@ gsap.to(loaderObj, {
    ──────────────────────────────────────────────── */
 function initSiteAnimations() {
 
-  // 1. SCROLL REVEAL (Apariciones Generales)
+  // 1. SCROLL REVEAL
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('visible');
@@ -121,7 +121,6 @@ function initSiteAnimations() {
         
         shuffled.forEach((span, i) => {
           const delay = (i / shuffled.length) * totalDuration;
-          
           gsap.to(span, {
             opacity: 0,
             duration: 0.2,
@@ -170,18 +169,16 @@ function initSiteAnimations() {
     });
   });
 
-  // 5. NUEVO: ANIMACIÓN DE PIEZAS HERO (CAOS -> ORDEN AL PASAR EL MOUSE)
+  // 5. ANIMACIÓN DE PIEZAS HERO
   const heroPiecesContainer = document.getElementById('hero-pieces-wrapper');
   const pcs = document.querySelectorAll('.hero-pieces-wrapper .pc');
 
-  // Posiciones de la grilla ordenada 2x3 (46px por pieza con gap)
   const gridSize = 50; 
   const gridPositions = [
     {x: 0, y: 0}, {x: gridSize, y: 0}, {x: gridSize*2, y: 0},
     {x: 0, y: gridSize}, {x: gridSize, y: gridSize}, {x: gridSize*2, y: gridSize}
   ];
 
-  // Función para obtener una posición dispersa al azar
   function getScatteredPos() {
     return {
       x: (Math.random() - 0.5) * 250,
@@ -190,12 +187,10 @@ function initSiteAnimations() {
     };
   }
 
-  // Iniciamos la dispersión y flotación constante
   pcs.forEach((pc) => {
     const start = getScatteredPos();
     gsap.set(pc, { x: start.x, y: start.y, rotation: start.rotation });
     
-    // Flotación constante (yoyo infinito)
     gsap.to(pc, {
       x: start.x + (Math.random() - 0.5) * 60,
       y: start.y + (Math.random() - 0.5) * 60,
@@ -208,51 +203,28 @@ function initSiteAnimations() {
     });
   });
 
-  // Al pasar el cursor: SE ARMAN
   heroPiecesContainer.addEventListener('mouseenter', () => {
     pcs.forEach((pc, i) => {
-      gsap.to(pc, {
-        x: gridPositions[i].x,
-        y: gridPositions[i].y,
-        rotation: 0,
-        scale: 1.1, // Se hacen apenas más grandes al armarse
-        duration: 0.8,
-        ease: "back.out(1.5)",
-        overwrite: "auto"
-      });
+      gsap.to(pc, { x: gridPositions[i].x, y: gridPositions[i].y, rotation: 0, scale: 1.1, duration: 0.8, ease: "back.out(1.5)", overwrite: "auto" });
     });
   });
 
-  // Al quitar el cursor: VUELVEN AL CAOS
   heroPiecesContainer.addEventListener('mouseleave', () => {
     pcs.forEach((pc) => {
       const start = getScatteredPos();
       gsap.to(pc, {
-        x: start.x,
-        y: start.y,
-        rotation: start.rotation,
-        scale: 1,
-        duration: 1,
-        ease: "power2.out",
-        overwrite: "auto",
+        x: start.x, y: start.y, rotation: start.rotation, scale: 1, duration: 1, ease: "power2.out", overwrite: "auto",
         onComplete: () => {
-          // Retoman la flotación natural después de explotar
           gsap.to(pc, {
-            x: start.x + (Math.random() - 0.5) * 60,
-            y: start.y + (Math.random() - 0.5) * 60,
-            rotation: start.rotation + (Math.random() - 0.5) * 45,
-            duration: 3 + Math.random() * 2,
-            yoyo: true,
-            repeat: -1,
-            ease: "sine.inOut",
-            overwrite: "auto"
+            x: start.x + (Math.random() - 0.5) * 60, y: start.y + (Math.random() - 0.5) * 60, rotation: start.rotation + (Math.random() - 0.5) * 45,
+            duration: 3 + Math.random() * 2, yoyo: true, repeat: -1, ease: "sine.inOut", overwrite: "auto"
           });
         }
       });
     });
   });
 
-  // 6. CTA — Efecto magnético suave
+  // 6. CTA MAGNÉTICO
   const ctaBtn = document.getElementById('cta-btn');
   if (ctaBtn) {
     ctaBtn.addEventListener('mousemove', e => {
@@ -265,17 +237,4 @@ function initSiteAnimations() {
       ctaBtn.style.transform = '';
     });
   }
-
-  // 7. GALERÍA — Hover zoom sutil
-  document.querySelectorAll('.gal-img').forEach(img => {
-    img.addEventListener('mouseenter', () => {
-      const photo = img.querySelector('.gal-photo');
-      if (photo) photo.style.transform = 'scale(1.05)';
-    });
-    img.addEventListener('mouseleave', () => {
-      const photo = img.querySelector('.gal-photo');
-      if (photo) photo.style.transform = '';
-    });
-  });
-
-} // Fin initSiteAnimations
+}
