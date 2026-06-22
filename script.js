@@ -61,25 +61,25 @@ function initSiteAnimations() {
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-  // 2. EFECTO TYPEWRITER (TRANSFORMA, DECIDE, AVANZA)
+  // 2. EFECTO TYPEWRITER (VERBOS STICKY)
   const verbLines = document.querySelectorAll('.verb-line');
   verbLines.forEach((verb, i) => {
     const textToType = verb.getAttribute('data-text');
     ScrollTrigger.create({
-      trigger: ".fundamento-verbs",
-      start: "top 75%",
+      trigger: ".fundamento-layout",
+      start: "top 60%",
       onEnter: () => {
         gsap.to(verb, {
           duration: 1,
           text: textToType,
           ease: "power1.inOut",
-          delay: i * 0.6 
+          delay: i * 0.4 
         });
       }
     });
   });
 
-  // 3. EFECTO DECODIFICACIÓN INTERCALADO (Textos en Formas)
+  // 3. EFECTO DECODIFICACIÓN INTERCALADO 
   const shapes = [
     '<svg class="g-shp" viewBox="0 0 30 20"><path d="M1,1 H29 V9 H19 V19 H9 V9 H1 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>', 
     '<svg class="g-shp" viewBox="0 0 30 10"><rect x="1" y="1" width="28" height="8" fill="none" stroke="currentColor" stroke-width="2"/></svg>', 
@@ -91,10 +91,8 @@ function initSiteAnimations() {
 
   document.querySelectorAll('.body-text').forEach((p, index) => {
     
-    // Condición para intercalar: Si el índice es impar (1, 3, 5), se salta y queda texto normal.
-    if (index % 2 !== 0) {
-      return; 
-    }
+    // Condición para intercalar
+    if (index % 2 !== 0) return; 
 
     const originalText = p.textContent;
     p.innerHTML = '';
@@ -114,7 +112,6 @@ function initSiteAnimations() {
       }
     });
 
-    // Al scrollear, decodificamos el párrafo con un fade cruzado
     ScrollTrigger.create({
       trigger: p,
       start: "top 85%", 
@@ -141,7 +138,7 @@ function initSiteAnimations() {
     });
   });
 
-  // 4. HEADER DOTS — Navegación de 6 secciones
+  // 4. HEADER DOTS 
   const SECTIONS = [
     'section-hero',
     'section-fundamento',
@@ -173,29 +170,84 @@ function initSiteAnimations() {
     });
   });
 
-  // 5. ANIMACIÓN DISPERSIÓN DE PIEZAS EN HERO (HOVER)
-  const heroPiecesContainer = document.getElementById('hero-pieces');
-  const pcs = document.querySelectorAll('.pc');
+  // 5. NUEVO: ANIMACIÓN DE PIEZAS HERO (CAOS -> ORDEN AL PASAR EL MOUSE)
+  const heroPiecesContainer = document.getElementById('hero-pieces-wrapper');
+  const pcs = document.querySelectorAll('.hero-pieces-wrapper .pc');
 
+  // Posiciones de la grilla ordenada 2x3 (46px por pieza con gap)
+  const gridSize = 50; 
+  const gridPositions = [
+    {x: 0, y: 0}, {x: gridSize, y: 0}, {x: gridSize*2, y: 0},
+    {x: 0, y: gridSize}, {x: gridSize, y: gridSize}, {x: gridSize*2, y: gridSize}
+  ];
+
+  // Función para obtener una posición dispersa al azar
+  function getScatteredPos() {
+    return {
+      x: (Math.random() - 0.5) * 250,
+      y: (Math.random() - 0.5) * 250,
+      rotation: (Math.random() - 0.5) * 360
+    };
+  }
+
+  // Iniciamos la dispersión y flotación constante
+  pcs.forEach((pc) => {
+    const start = getScatteredPos();
+    gsap.set(pc, { x: start.x, y: start.y, rotation: start.rotation });
+    
+    // Flotación constante (yoyo infinito)
+    gsap.to(pc, {
+      x: start.x + (Math.random() - 0.5) * 60,
+      y: start.y + (Math.random() - 0.5) * 60,
+      rotation: start.rotation + (Math.random() - 0.5) * 45,
+      duration: 3 + Math.random() * 2,
+      yoyo: true,
+      repeat: -1,
+      ease: "sine.inOut",
+      overwrite: "auto"
+    });
+  });
+
+  // Al pasar el cursor: SE ARMAN
   heroPiecesContainer.addEventListener('mouseenter', () => {
-    pcs.forEach(pc => {
+    pcs.forEach((pc, i) => {
       gsap.to(pc, {
-        x: (Math.random() - 0.5) * 400,
-        y: (Math.random() - 0.5) * 400,
-        rotation: (Math.random() - 0.5) * 360,
-        scale: 1 + Math.random() * 0.5,
+        x: gridPositions[i].x,
+        y: gridPositions[i].y,
+        rotation: 0,
+        scale: 1.1, // Se hacen apenas más grandes al armarse
         duration: 0.8,
-        ease: "power3.out"
+        ease: "back.out(1.5)",
+        overwrite: "auto"
       });
     });
   });
 
+  // Al quitar el cursor: VUELVEN AL CAOS
   heroPiecesContainer.addEventListener('mouseleave', () => {
-    pcs.forEach(pc => {
+    pcs.forEach((pc) => {
+      const start = getScatteredPos();
       gsap.to(pc, {
-        x: 0, y: 0, rotation: 0, scale: 1,
+        x: start.x,
+        y: start.y,
+        rotation: start.rotation,
+        scale: 1,
         duration: 1,
-        ease: "back.out(1.5)"
+        ease: "power2.out",
+        overwrite: "auto",
+        onComplete: () => {
+          // Retoman la flotación natural después de explotar
+          gsap.to(pc, {
+            x: start.x + (Math.random() - 0.5) * 60,
+            y: start.y + (Math.random() - 0.5) * 60,
+            rotation: start.rotation + (Math.random() - 0.5) * 45,
+            duration: 3 + Math.random() * 2,
+            yoyo: true,
+            repeat: -1,
+            ease: "sine.inOut",
+            overwrite: "auto"
+          });
+        }
       });
     });
   });
