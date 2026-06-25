@@ -167,25 +167,23 @@ body {
 }
 
 /* ════════════════════════════════════════════════
-   03 — CONCEPTOS EXTRAÍDOS
+   03 — CONCEPTOS (ALINEACIÓN SUPERIOR)
    ════════════════════════════════════════════════ */
 .concepts-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 24px; 
-  align-items: start;
+  gap: 24px; 
+  align-items: start; /* Esto asegura que todos empiecen arriba en la misma línea */
 }
 
 .concepts-col { display:flex; flex-direction:column; gap:24px; } 
-.col-offset-1 { margin-top: 60px; } 
-.col-offset-2 { margin-top: 30px; } 
 
 .concept-card {
   border: 1px solid var(--border);
   border-left-width: 3px; 
   padding: 32px 24px; 
   background: transparent;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.2s ease;
   cursor: default;
 }
 
@@ -193,9 +191,10 @@ body {
 .card-rosa    { border-left-color: var(--pink); }
 .card-amarillo{ border-left-color: var(--yellow); }
 
-.card-celeste:hover { border-color: var(--blue); background: rgba(0, 159, 227, 0.04); }
-.card-rosa:hover    { border-color: var(--pink); background: rgba(230, 0, 126, 0.04); }
-.card-amarillo:hover{ border-color: var(--yellow); background: rgba(255, 237, 0, 0.04); }
+/* Añadí un ligero efecto de elevación al pasar el mouse por las tarjetas */
+.card-celeste:hover { border-color: var(--blue); background: rgba(0, 159, 227, 0.04); transform: translateY(-4px); }
+.card-rosa:hover    { border-color: var(--pink); background: rgba(230, 0, 126, 0.04); transform: translateY(-4px); }
+.card-amarillo:hover{ border-color: var(--yellow); background: rgba(255, 237, 0, 0.04); transform: translateY(-4px); }
 
 .card-num { font-family: var(--mono); font-size: 9px; color: var(--dim); letter-spacing: 0.15em; margin-bottom: 16px; }
 .card-title { font-family: var(--disp); font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
@@ -203,7 +202,6 @@ body {
 
 @media (max-width: 900px) {
   .concepts-grid { grid-template-columns: 1fr; }
-  .col-offset-1, .col-offset-2 { margin-top: 0; }
 }
 
 /* ════════════════════════════════════════════════
@@ -360,3 +358,77 @@ body {
 .footer-logo { height: 60px; width: auto; object-fit: contain; }
 .footer-text-block { display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 800px; }
 .footer-text-block p { font-family: var(--disp); font-size: 1rem; color: var(--text-soft); line-height: 1.6; margin: 0; }
+
+/* ════════════════════════════════════════════════
+   08 — REFERENCIAS (CÓDIGOS QR)
+   ════════════════════════════════════════════════ */
+.section-referencias {
+  padding-top: 60px; 
+  padding-bottom: 80px;
+}
+
+.refs-container {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.ref-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 400px;
+}
+
+/* El contenedor del QR ahora es un enlace interactivo */
+.ref-qr-wrapper {
+  background-color: var(--white); 
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efecto al pasar el mouse por encima del código QR */
+.ref-qr-wrapper:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 237, 0, 0.25); /* Resplandor amarillo */
+}
+
+.ref-qr {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.ref-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ref-title {
+  font-family: var(--disp);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+.ref-text p {
+  font-family: var(--disp);
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .refs-container { flex-direction: column; gap: 40px; align-items: center; }
+  .ref-item { max-width: 100%; }
+}
