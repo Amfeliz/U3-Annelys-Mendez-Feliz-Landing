@@ -90,7 +90,7 @@ body {
 .reveal-d4           { transition-delay: 0.60s; }
 
 /* ════════════════════════════════════════════════
-   01 — HERO (REDISEÑO TIPOGRÁFICO Y PIEZAS DINÁMICAS)
+   01 — HERO
    ════════════════════════════════════════════════ */
 .section-hero { min-height: 100vh; padding: 120px var(--pad) 0; max-width: calc(var(--max) + var(--pad) * 2); margin: 0 auto; display: flex; flex-direction: column; justify-content: center;}
 .hero-inner { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 80px; flex: 1; }
@@ -157,7 +157,7 @@ body {
 .verb-white { color: var(--white); }
 .verb-dark  { color: var(--gray-text); }
 
-.quote-block { border-left: 4px solid var(--yellow); padding: 8px 0 8px 24px; margin-bottom: 32px; }
+.quote-block { border-left: 4px solid var(--pink); padding: 8px 0 8px 24px; margin-bottom: 32px; }
 .quote-block p { font-family: var(--disp); font-size: 1.3rem; font-weight: 700; line-height: 1.6; color: var(--white); margin:0;}
 
 @media (max-width: 900px) {
@@ -173,7 +173,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px; 
-  align-items: start; /* Esto asegura que todos empiecen arriba en la misma línea */
+  align-items: start;
 }
 
 .concepts-col { display:flex; flex-direction:column; gap:24px; } 
@@ -191,7 +191,6 @@ body {
 .card-rosa    { border-left-color: var(--pink); }
 .card-amarillo{ border-left-color: var(--yellow); }
 
-/* Añadí un ligero efecto de elevación al pasar el mouse por las tarjetas */
 .card-celeste:hover { border-color: var(--blue); background: rgba(0, 159, 227, 0.04); transform: translateY(-4px); }
 .card-rosa:hover    { border-color: var(--pink); background: rgba(230, 0, 126, 0.04); transform: translateY(-4px); }
 .card-amarillo:hover{ border-color: var(--yellow); background: rgba(255, 237, 0, 0.04); transform: translateY(-4px); }
@@ -209,9 +208,8 @@ body {
    ════════════════════════════════════════════════ */
 .bento-gallery {
   display: grid;
-  /* 4 Columnas iguales para poder cruzar elementos */
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 250px; /* Alto base de cada celda */
+  grid-auto-rows: 250px; 
   gap: 16px;
   width: 100%;
 }
@@ -224,13 +222,11 @@ body {
   background: var(--gray-card);
 }
 
-/* La imagen principal ocupa 2 columnas y 2 filas (Un cuadrado gigante) */
 .bento-main {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-/* Las imágenes apaisadas ocupan 2 columnas y 1 fila */
 .bento-wide {
   grid-column: span 2;
   grid-row: span 1;
@@ -266,7 +262,6 @@ body {
 .gal-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin-bottom: 6px; }
 .gal-sub { font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.12em; }
 
-/* Responsividad para móviles: todo pasa a 1 o 2 columnas */
 @media (max-width: 900px) {
   .bento-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -293,35 +288,9 @@ body {
 .partitura-iframe { width: 100%; height: 750px; border: none; background: var(--black); }
 
 /* ════════════════════════════════════════════════
-   06 — CONCEPTOS TIPOGRÁFICOS
+   06 — INTERFAZ EXPRESIVA
    ════════════════════════════════════════════════ */
-.concepts-typo { display: flex; flex-direction: column; gap: 24px; }
-.typo-row { display: flex; align-items: baseline; gap: 40px; padding: 16px 0; flex-wrap: wrap;}
-.typo-row--right  { justify-content: flex-end; }
-.typo-row--mid    { justify-content: center; }
-.typo-row--left   { justify-content: flex-start; }
-.typo-word { font-family: var(--disp); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--white); white-space: nowrap; transition: color 0.3s ease; cursor: default; }
-
-.typo-xl  { font-size: clamp(56px, 8vw,  100px); }
-.typo-lg  { font-size: clamp(48px, 7vw,  88px); color: var(--gray-text); }
-.typo-md  { font-size: clamp(40px, 6vw,  76px); }
-.typo-sm  { font-size: clamp(32px, 5vw,  64px); color: var(--gray-text); }
-.typo-xs  { font-size: clamp(28px, 4vw,  52px); }
-.typo-xxs { font-size: clamp(24px, 3.5vw,44px); color: var(--gray-text); }
-
-.typo-xl:hover  { color: var(--yellow) !important; }
-.typo-lg:hover  { color: var(--pink) !important; }
-.typo-md:hover  { color: var(--blue) !important; }
-.typo-sm:hover  { color: var(--yellow) !important; }
-.typo-xs:hover  { color: var(--pink) !important; }
-.typo-xxs:hover { color: var(--blue) !important; }
-
-.typo-desc { font-family: var(--disp); font-size: 1rem; color: var(--text-soft); line-height: 1.6; max-width: 300px; }
-
-/* ════════════════════════════════════════════════
-   07 — CTA EXPERIMENTAL Y LÍNEA DIVISORIA
-   ════════════════════════════════════════════════ */
-.section-cta { display: flex; justify-content: center; }
+.section-interfaz-expresiva { display: flex; flex-direction: column; align-items: flex-start; }
 
 .cta-inner { 
   border-top: none; 
@@ -342,46 +311,34 @@ body {
 .cta-btn:hover .cta-arrow { transform: translateX(8px); }
 
 /* ════════════════════════════════════════════════
-   FOOTER
-   ════════════════════════════════════════════════ */
-#site-footer { 
-  padding: 80px var(--pad); 
-  border-top: none; 
-  max-width: calc(var(--max) + var(--pad) * 2); 
-  margin: 0 auto; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
-  gap: 40px; 
-}
-.footer-logos { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-.footer-logo { height: 60px; width: auto; object-fit: contain; }
-.footer-text-block { display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 800px; }
-.footer-text-block p { font-family: var(--disp); font-size: 1rem; color: var(--text-soft); line-height: 1.6; margin: 0; }
-
-/* ════════════════════════════════════════════════
-   08 — REFERENCIAS (CÓDIGOS QR)
+   07 — REFERENCIAS (ESTRUCTURA DE GRILLA ESTÁNDAR, CONTENIDO ARMONIZADO)
    ════════════════════════════════════════════════ */
 .section-referencias {
   padding-top: 60px; 
   padding-bottom: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+  /* CORREGIDO: Vuelve a alinearse a la izquierda nativa como el resto del sitio */
+  display: block; 
 }
 
 .refs-container {
   display: flex;
   gap: 80px;
-  justify-content: center;
+  /* CORREGIDO: Ajuste armónico centrado del contenido de manera horizontal */
+  justify-content: center; 
+  align-items: center;
   flex-wrap: wrap; 
+  width: 100%;
+  margin-top: 20px;
 }
 
 .ref-item {
   display: flex;
   align-items: center;
   gap: 24px;
-  max-width: 400px;
+  max-width: 420px;
 }
 
-/* El contenedor del QR ahora es un enlace interactivo */
 .ref-qr-wrapper {
   background-color: var(--white); 
   padding: 8px;
@@ -395,10 +352,9 @@ body {
   cursor: pointer;
 }
 
-/* Efecto al pasar el mouse por encima del código QR */
 .ref-qr-wrapper:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(255, 237, 0, 0.25); /* Resplandor amarillo */
+  box-shadow: 0 15px 30px rgba(255, 237, 0, 0.25); 
 }
 
 .ref-qr {
@@ -432,3 +388,21 @@ body {
   .refs-container { flex-direction: column; gap: 40px; align-items: center; }
   .ref-item { max-width: 100%; }
 }
+
+/* ════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════ */
+#site-footer { 
+  padding: 80px var(--pad); 
+  border-top: none; 
+  max-width: calc(var(--max) + var(--pad) * 2); 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 40px; 
+}
+.footer-logos { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+.footer-logo { height: 60px; width: auto; object-fit: contain; }
+.footer-text-block { display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 800px; }
+.footer-text-block p { font-family: var(--disp); font-size: 1rem; color: var(--text-soft); line-height: 1.6; margin: 0; }

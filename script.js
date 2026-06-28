@@ -4,7 +4,6 @@
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-// Bloqueamos el scroll mientras carga
 document.body.style.overflow = 'hidden';
 window.scrollTo(0, 0);
 
@@ -90,8 +89,6 @@ function initSiteAnimations() {
   const shapeColors = ['c-celeste', 'c-rosa', 'c-amarillo'];
 
   document.querySelectorAll('.body-text').forEach((p, index) => {
-    
-    // Condición para intercalar
     if (index % 2 !== 0) return; 
 
     const originalText = p.textContent;
@@ -144,7 +141,8 @@ function initSiteAnimations() {
     'section-conceptos',
     'section-galeria',
     'section-partitura',
-    'section-cta'
+    'section-interfaz-expresiva',
+    'section-referencias'
   ];
   const dots = document.querySelectorAll('.header-dots span');
 
@@ -155,7 +153,7 @@ function initSiteAnimations() {
       if (idx < 0) return;
       dots.forEach((d, i) => d.classList.toggle('active', i === idx));
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0.25 });
 
   SECTIONS.forEach(id => {
     const el = document.getElementById(id);
