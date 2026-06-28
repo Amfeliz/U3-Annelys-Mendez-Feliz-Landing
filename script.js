@@ -134,7 +134,7 @@ function initSiteAnimations() {
     });
   });
 
-  // 4. HEADER DOTS 
+  // 4. HEADER DOTS SINCRO (Sincronización de las secciones incluyendo la duplicada)
   const SECTIONS = [
     'section-hero',
     'section-fundamento',
@@ -142,6 +142,8 @@ function initSiteAnimations() {
     'section-galeria',
     'section-partitura',
     'section-interfaz-expresiva',
+    'section-arquitectura',
+    'section-partitura-dos',
     'section-referencias'
   ];
   const dots = document.querySelectorAll('.header-dots span');
