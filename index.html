@@ -32,18 +32,22 @@
     <div class="header-right">
       <span class="header-section-label">Navegación</span>
       <div class="header-dots">
+        <!-- Los anclajes numéricos ahora corresponden exactamente al orden secuencial del documento -->
         <span class="active" data-target="section-hero">01</span>
         <span data-target="section-fundamento">02</span>
         <span data-target="section-conceptos">03</span>
         <span data-target="section-galeria">04</span>
-        <span data-target="section-partitura">05</span>
-        <span data-target="section-interfaz-expresiva">06</span>
-        <span data-target="section-arquitectura">07</span>
-        <span data-target="section-referencias">08</span>
+        <span data-target="section-videos">05</span>
+        <span data-target="section-partitura">06</span>
+        <span data-target="section-interfaz-expresiva">07</span>
+        <span data-target="section-arquitectura">08</span>
+        <span data-target="section-partitura-dos">09</span>
+        <span data-target="section-referencias">10</span>
       </div>
     </div>
   </header>
 
+  <!-- 01. HERO -->
   <section id="section-hero" class="section-hero">
     <div class="hero-inner">
       <div class="hero-text-block">
@@ -72,6 +76,7 @@
     </div>
   </section>
 
+  <!-- 02. FUNDAMENTO -->
   <section id="section-fundamento" class="section-pad">
     <div class="fundamento-layout">
       <div class="fundamento-sticky">
@@ -117,12 +122,13 @@
     </div>
   </section>
 
- <section id="section-conceptos" class="section-pad">
+  <!-- 03. CONCEPTOS -->
+  <section id="section-conceptos" class="section-pad">
     <p class="section-label reveal">Conceptos</p>
     <div class="concepts-grid">
       
       <div class="concepts-col">
-        <div class="concept-card card-celeste reveal"><div class="card-num">01</div><div class="card-title">Conexión</div><div class="card-body">Conectando cuantos elementos puedas</div></div>
+        <div class="concept-card card-celeste reveal"><div class="card-num">01</div><div class="card-title">Conexión</div><div class="card-body">Conectando cuantos elements puedas</div></div>
         <div class="concept-card card-celeste reveal reveal-d1"><div class="card-num">04</div><div class="card-title">Construcción</div><div class="card-body">Materializar caminos y levantar la estructura</div></div>
         <div class="concept-card card-rosa reveal reveal-d2"><div class="card-num">07</div><div class="card-title">Cambio</div><div class="card-body">Adaptabilidad constante ante las jugadas</div></div>
         <div class="concept-card card-amarillo reveal reveal-d3"><div class="card-num">10</div><div class="card-title">Avance</div><div class="card-body">La acción de progresar de forma estratégica</div></div>
@@ -143,6 +149,7 @@
     </div>
   </section>
 
+  <!-- 04. GALERÍA -->
   <section id="section-galeria" class="section-pad">
     <p class="section-label reveal">Galería</p>
     
@@ -191,15 +198,28 @@
     </div>
   </section>
 
-  <section id="section-partitura" class="section-pad">
-    <p class="section-label reveal">Partitura de interacción juego físico</p>
-    
-    <!-- Contenedor Partitura 1 -->
-    <div class="partitura-wrapper reveal reveal-d1">
-<iframe class="partitura-iframe" src="https://eadpucv.github.io/pix/#!/import/eyJ0aXRsZSI6IlBhcnRpdHVyYSBkZSBpbnRlcmFjY2nDs24gQ29uZWN0YW5kbyIsImxheW91dCI6InBpeCIsImRlc2NyaXB0aW9uIjoiRXN0YSBwYXJ0aXR1cmEgZXhwbG9yYSBjb21vIGxhIGVzdHJhdGVnaWEsIGxhIGNvbGFib3JhY2nDs24geSBsb3MgZGVzYWZpb3MgaW5lc3BlcmFkb3MgdHJhbnNmb3JtYW4gbGEgZXhwZXJpZW5jaWEgZGUganVlZ28gZW50cmUgYW1pZ29zLiIsInNjb3JlcyI6W1t7InN0ZXBfdGl0bGUiOiJQcmVwYXJhY2nDs24iLCJ1c2VyIjoicGl4LWludHJpZ3VlZCBcIsK/Q3XDoWwgc2Vyw6EgbGEgc2FsaWRhIGNvcnJlY3RhP1wiIiwiZGlhbG9ndWUiOiJwaXgtY29tbWVudCBNdXJtdWxsb3MgYmFqb3MgcG9yIHBhcnRlIGRlIGFtYm9zIGVxdWlwb3MiLCJzeXN0ZW0iOiJwaXgtZW1wdHkgVGFibGVybyBjdWFkcmljdWxhZG8iLCJub3RlIjoiTGEgZWxlY2Npw7NuIGRlbCBjYW1pbm8gY29ycmVjdG8gdGVuc2EgdW4gcG9jbyBlbCBpbmljaW8gZGVsIGp1ZWdvIHBvciBwYXJ0ZSBkZSBhbWJvcyBlcXVpcG9zLiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtc3VycHJpc2VkIFwiQ3JlbyBxdWUgZGViZXLDrWFtb3MgZWxlZ2lyIGVzdGFcIiIsImRpYWxvZ3VlIjoicGl4LW1vdmUgU2XDsWFsYW4gcnV0YXMgcG9zaWJsZXMiLCJzeXN0ZW0iOiJwaXgtc3RhY2sgRXNxdWluYXMgb2N1bHRhcyIsIm5vdGUiOiIifSx7InN0ZXBfdGl0bGUiOiJFc3RyYXRlZ2lhIiwidXNlciI6InBpeC1pbnRyaWd1ZWQgXCLCv0d1YXJkZW1vcyBlbCBlc2N1ZG8nXCIiLCJkaWFsb2d1ZSI6InBpeC1hbGVydCBEdWRhbiBhbnRlcyBkZSBjb2xvY2FyIHVuYSBwaWV6YSBpbXBvcnRhbnRlIiwic3lzdGVtIjoicGl4LXVwZGF0ZSBDb21vZGluZXMgbWV6Y2xhZG9zIGRlbnRybyBkZWwgbWF6byIsIm5vdGUiOiJMb3MgZG9zIGVxdWlwb3MgcGllbnNhbiBiaWVuIHN1cyBqdWdhZGFzIHkgcGllemFzLCBwcm90ZWdpZW5kbyBvIHNhYm90ZWFuZG8gcGFyYSBnYW5hci4ifSx7InN0ZXBfdGl0bGUiOiIiLCJ1c2VyIjoicGl4LWludHJpZ3VlZCBcIkNyZW8gcXVlIHF1aWVyZW4gbGxlZ2FyIGEgZXNhIGVzcXVpbmFcIiIsImRpYWxvZ3VlIjoicGl4LXZpZXcgQW1ib3Mgb2JzZXJ2YW4gY29uc3RhbnRlbWVudGUgZWwgYXZhbmNlIGRlbCBlcXVpcG8gY29udHJhcmlvIiwic3lzdGVtIjoicGl4LWV4cGFuZCBFbCBhemFyIGRlIGxhcyBwaWV6YXMgZW4gZWwgbWF6byIsIm5vdGUiOiIifSx7InN0ZXBfdGl0bGUiOiJSZXRvcy9jYXJ0YXMgZXNwZWNpYWxlcyIsInVzZXIiOiJwaXgtaGFwcHkgXCJOb3Mgc2FsacOzIHVuIHJldG8sIGd1w61hbWUgY29uIHR1IHZveiwgaW50ZW50YXLDqSBwb25lciBsYSBwaWV6YVwiIiwiZGlhbG9ndWUiOiJwaXgtaGFuZDEgVW5vIGRlIGxvcyBqdWdhZG9yZXMgY2llcnJhIGxvcyBvam9zLCBlbCBvb3RybyBpbnRlbnRhIGd1aWFybG8iLCJzeXN0ZW0iOiJwaXgtY2xvY2sgTG9zIDMwIHNlZ3VuZG9zIHF1ZSBlbCByaXZhbCBjdWVudGEgZW4gdm96IGFsdGEiLCJub3RlIjoiU2UgZm9ybWEgdW4gbW9tZW50byBkZSBwcmVzacOzbiBwYXJhIGVsIGVxdWlwbyBxdWUgcmVhbGl6YSBlbCByZXRvLCBwZXJvIGEgbGEgdmV6IGhheSBtdWNoYXMgcmlzYXMgcG9yIHBhcnRlIGRlIGFtYm9zIGVxdWlwb3MuIn0seyJzdGVwX3RpdGxlIjoiIiwidXNlciI6InBpeC1zdXJwcmlzZWQgXCJMZXMgc2FsacOzIGxhIGNhcnRhIGVzcGVjaWFsXCIiLCJkaWFsb2d1ZSI6InBpeC12aWV3IEVsIGVxdWlwbyBjb250cmFyaW8gcmV2aXNhIHVuYSBzYWxpZGEiLCJzeXN0ZW0iOiJwaXgtbG9jayBMYSBlc3RyYXRlZ2lhIGRlbCBlcXVpcG8gY29udHJhcmlvIiwibm90ZSI6IkVsIGFtYmllbnRlIGNhbWJpYSB5YSBxdWUgdW4gZXF1aXBvIHB1ZWRlIG8gbm8gc2FiZXIgbGEgc2FsaWRhIGNvcnJlY3RhLCBtdWVzdHJhbiBkaXNjcmVjacOzbiBwYXJhIHN1IGp1Z2FkYS4ifSx7InN0ZXBfdGl0bGUiOiJMbGVnYWRhIiwidXNlciI6InBpeC1oYXBweSBcIkVzcGVybyBxdWUgc2VhIGxhIGNvcnJlY3RhLCBzb2xvIG5vcyBxdWVkYSB1bmEgcGllemFcIiIsImRpYWxvZ3VlIjoicGl4LXJpZ2h0IFBvbmVuIGxhIHBpZXphIGNvbiBlbnR1c2lhc21vIHlhIHF1ZSBlc3TDoW4gcG9yIGxsZWdhciIsInN5c3RlbSI6InBpeC1wcm9jZXNzIEVsIHJlY29ycmlkbyBjb25zdHJ1aWRvIGRlc2RlIGVsIGNlbnRybyBoYXN0YSBsYSBtZXRhIiwibm90ZSI6IiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtYW5ncnkgXCJOb28gZXJhIGxhIGluY29ycmVjdGFcIiIsImRpYWxvZ3VlIjoicGl4LXJvdGF0ZSBVbm8gZGUgbG9zIGp1Z2Fkb3JlcyBkYSB2dWVsdGEgZWwgY3VhZHJhZG8iLCJzeXN0ZW0iOiJwaXgtc3RhY2sgTGEgZXNxdWluYSByZXZlbGEgbGEgc2FsaWRhIGluY29ycmVjdGEiLCJub3RlIjoiU2UgdGVuc2EgZWwgYW1iaWVudGUgZGUganVlZ28gcGVybyBhIGxhIHZleiBzdXJnZW4gcmlzYXMgZGUgbGEgc2l0dWFjacOzbiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtc2FkIFwiRWxsb3Mgc2Fiw61hbiBjdWFsIGVyYSBsYSBjb3JyZWN0YVwiIiwiZGlhbG9ndWUiOiJwaXgtY29tbWVudCBFbCBvdHJvIGVxdWlwbyBjZWxlYnJhIHN1IHZpY3RvcmlhIiwic3lzdGVtIjoicGl4LWNoZWNrIExhIHNhbGlkYSBjb3JyZWN0YSBwb3NpY2lvbmFkYSBhbCBhemFyIiwibm90ZSI6IkVsaWdpZXJvbiBsYSBzYWxpZGEgY29ycmVjdGEgZ3JhY2lhcyBhIGxhIGNhcnRhLCBhbWJvcyBlcXVpcG9zIGRpc2ZydXRhcm9uIGVsIGp1ZWdvIHkgbW9zdHJhcm9uIGJ1ZW4gdHJhYmFqbyBlbiBlcXVpcG8uIn1dXX0=" width="100%" height="732" frameborder="0"></iframe>    </div>
+  <!-- 05. VIDEOS -->
+  <section id="section-videos" class="section-pad">
+    <p class="section-label reveal">Videos</p>
+    <div class="videos-container reveal reveal-d1">
+      <div class="video-item-frame">
+        <video class="custom-speed-video" autoplay loop muted playsinline src="assets/1000231921.mp4"></video>
+      </div>
+      <div class="video-item-frame">
+        <video class="custom-speed-video" autoplay loop muted playsinline src="assets/1000231928.mp4"></video>
+      </div>
+    </div>
   </section>
 
-  <section id="section-interfaz-expresiva" class="section-pad">
+  <!-- 06. PARTITURA JUEGO FÍSICO -->
+  <section id="section-partitura" class="section-pad">
+    <p class="section-label reveal">Partitura de interacción juego físico</p>
+    <div class="partitura-wrapper reveal reveal-d1">
+    <iframe class="partitura-iframe" src="https://eadpucv.github.io/pix/#!/import/eyJ0aXRsZSI6IlBhcnRpdHVyYSBkZSBpbnRlcmFjY2nDs24gQ29uZWN0YW5kbyIsImxheW91dCI6InBpeCIsImRlc2NyaXB0aW9uIjoiRXN0YSBwYXJ0aXR1cmEgZXhwbG9yYSBjb21vIGxhIGVzdHJhdGVnaWEsIGxhIGNvbGFib3JhY2nDs24geSBsb3MgZGVzYWZpb3MgaW5lc3BlcmFkb3MgdHJhbnNmb3JtYW4gbGEgZXhwZXJpZW5jaWEgZGUganVlZ28gZW50cmUgYW1pZ29zLiIsInNjb3JlcyI6W1t7InN0ZXBfdGl0bGUiOiJQcmVwYXJhY2nDs24iLCJ1c2VyIjoicGl4LWludHJpZ3VlZCBcIsK/Q3XDoWwgc2Vyw6EgbGEgc2FsaWRhIGNvcnJlY3RhP1wiIiwiZGlhbG9ndWUiOiJwaXgtY29tbWVudCBNdXJtdWxsb3MgYmFqb3MgcG9yIHBhcnRlIGRlIGFtYm9zIGVxdWlwb3MiLCJzeXN0ZW0iOiJwaXgtZW1wdHkgVGFibGVybyBjdWFkcmljdWxhZG8iLCJub3RlIjoiTGEgZWxlY2Npw7NuIGRlbCBjYW1pbm8gY29ycmVjdG8gdGVuc2EgdW4gcG9jbyBlbCBpbmljaW8gZGVsIGp1ZWdvIHBvciBwYXJ0ZSBkZSBhbWJvcyBlcXVpcG9zLiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtc3VycHJpc2VkIFwiQ3JlbyBxdWUgZGViZXLDrWFtb3MgZWxlZ2lyIGVzdGFcIiIsImRpYWxvZ3VlIjoicGl4LW1vdmUgU2XDsWFsYW4gcnV0YXMgcG9zaWJsZXMiLCJzeXN0ZW0iOiJwaXgtc3RhY2sgRXNxdWluYXMgb2N1bHRhcyIsIm5vdGUiOiIifSx7InN0ZXBfdGl0bGUiOiJFc3RyYXRlZ2lhIiwidXNlciI6InBpeC1pbnRyaWd1ZWQgXCLCv0d1YXJkZW1vcyBlbCBlc2N1ZG8nXCIiLCJkaWFsb2d1ZSI6InBpeC1hbGVydCBEdWRhbiBhbnRlcyBkZSBjb2xvY2FyIHVuYSBwaWV6YSBpbXBvcnRhbnRlIiwic3lzdGVtIjoicGl4LXVwZGF0ZSBDb21vZGluZXMgbWV6Y2xhZG9zIGRlbnRybyBkZWwgbWF6byIsIm5vdGUiOiJMb3MgZG9zIGVxdWlwb3MgcGllbnNhbiBiaWVuIHN1cyBqdWdhZGFzIHkgcGllemFzLCBwcm90ZWdpZW5kbyBvIHNhYm90ZWFuZG8gcGFyYSBnYW5hci4ifSx7InN0ZXBfdGl0bGUiOiIiLCJ1c2VyIjoicGl4LWludHJpZ3VlZCBcIkNyZW8gcXVlIHF1aWVyZW4gbGxlZ2FyIGEgZXNhIGVzcXVpbmFcIiIsImRpYWxvZ3VlIjoicGl4LXZpZXcgQW1ib3Mgb2JzZXJ2YW4gY29uc3RhbnRlbWVudGUgZWwgYXZhbmNlIGRlbCBlcXVpcG8gY29udHJhcmlvIiwic3lzdGVtIjoicGl4LWV4cGFuZCBFbCBhemFyIGRlIGxhcyBwaWV6YXMgZW4gZWwgbWF6byIsIm5vdGUiOiIifSx7InN0ZXBfdGl0bGUiOiJSZXRvcy9jYXJ0YXMgZXNwZWNpYWxlcyIsInVzZXIiOiJwaXgtaGFwcHkgXCJOb3Mgc2FsacOzIHVuIHJldG8sIGd1w61hbWUgY29uIHR1IHZveiwgaW50ZW50YXLDqSBwb25lciBsYSBwaWV6YVwiIiwiZGlhbG9ndWUiOiJwaXgtaGFuZDEgVW5vIGRlIGxvcyBqdWdhZG9yZXMgY2llcnJhIGxvcyBvam9zLCBlbCBvb3RybyBpbnRlbnRhIGd1aWFybG8iLCJzeXN0ZW0iOiJwaXgtY2xvY2sgTG9zIDMwIHNlZ3VuZG9zIHF1ZSBlbCByaXZhbCBjdWVudGEgZW4gdm96IGFsdGEiLCJub3RlIjoiU2UgZm9ybWEgdW4gbW9tZW50byBkZSBwcmVzacOzbiBwYXJhIGVsIGVxdWlwbyBxdWUgcmVhbGl6YSBlbCByZXRvLCBwZXJvIGEgbGEgdmV6IGhheSBtdWNoYXMgcmlzYXMgcG9yIHBhcnRlIGRlIGFtYm9zIGVxdWlwb3MuIn0seyJzdGVwX3RpdGxlIjoiIiwidXNlciI6InBpeC1zdXJwcmlzZWQgXCJMZXMgc2FsacOzIGxhIGNhcnRhIGVzcGVjaWFsXCIiLCJkaWFsb2d1ZSI6InBpeC12aWV3IEVsIGVxdWlwbyBjb250cmFyaW8gcmV2aXNhIHVuYSBzYWxpZGEiLCJzeXN0ZW0iOiJwaXgtbG9jayBMYSBlc3RyYXRlZ2lhIGRlbCBlcXVpcG8gY29udHJhcmlvIiwibm90ZSI6IkVsIGFtYmllbnRlIGNhbWJpYSB5YSBxdWUgdW4gZXF1aXBvIHB1ZWRlIG8gbm8gc2FiZXIgbGEgc2FsaWRhIGNvcnJlY3RhLCBtdWVzdHJhbiBkaXNjcmVjacOzbiBwYXJhIHN1IGp1Z2FkYS4ifSx7InN0ZXBfdGl0bGUiOiJMbGVnYWRhIiwidXNlciI6InBpeC1oYXBweSBcIkVzcGVybyBxdWUgc2VhIGxhIGNvcnJlY3RhLCBzb2xvIG5vcyBxdWVkYSB1bmEgcGllemFcIiIsImRpYWxvZ3VlIjoicGl4LXJpZ2h0IFBvbmVuIGxhIHBpZXphIGNvbiBlbnR1c2lhc21vIHlhIHF1ZSBlc3TDoW4gcG9yIGxsZWdhciIsInN5c3RlbSI6InBpeC1wcm9jZXNzIEVsIHJlY29ycmlkbyBjb25zdHJ1aWRvIGRlc2RlIGVsIGNlbnRybyBoYXN0YSBsYSBtZXRhIiwibm90ZSI6IiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtYW5ncnkgXCJOb28gZXJhIGxhIGluY29ycmVjdGFcIiIsImRpYWxvZ3VlIjoicGl4LXJvdGF0ZSBVbm8gZGUgbG9zIGp1Z2Fkb3JlcyBkYSB2dWVsdGEgZWwgY3VhZHJhZG8iLCJzeXN0ZW0iOiJwaXgtc3RhY2sgTGEgZXNxdWluYSByZXZlbGEgbGEgc2FsaWRhIGluY29ycmVjdGEiLCJub3RlIjoiU2UgdGVuc2EgZWwgYW1iaWVudGUgZGUganVlZ28gcGVybyBhIGxhIHZleiBzdXJnZW4gcmlzYXMgZGUgbGEgc2l0dWFjacOzbiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtc2FkIFwiRWxsb3Mgc2Fiw61hbiBjdWFsIGVyYSBsYSBjb3JyZWN0YVwiIiwiZGlhbG9ndWUiOiJwaXgtY29tbWVudCBFbCBvdHJvIGVxdWlwbyBjZWxlYnJhIHN1IHZpY3RvcmlhIiwic3lzdGVtIjoicGl4LWNoZWNrIExhIHNhbGlkYSBjb3JyZWN0YSBwb3NpY2lvbmFkYSBhbCBhemFyIiwibm90ZSI6IkVsaWdpZXJvbiBsYSBzYWxpZGEgY29ycmVjdGEgZ3JhY2lhcyBhIGxhIGNhcnRhLCBhbWJvcyBlcXVpcG9zIGRpc2ZydXRhcm9uIGVsIGp1ZWdvIHkgbW9zdHJhcm9uIGJ1ZW4gdHJhYmFqbyBlbiBlcXVpcG8uIn1dXX0" frameborder="0"></iframe>    </div>
+  </section>
+
+  <!-- 07. INTERFAZ EXPRESIVA -->
+  <section id="section-interfaz-expresiva" class="section-pad section-cta-compact">
     <p class="section-label reveal">Interfaz expresiva</p>
     <div class="cta-inner reveal">
       <a href="https://amfeliz.github.io/-U3-Annelys-Mendez--Conectando/" target="_blank" class="cta-btn" id="cta-btn">
@@ -209,13 +229,13 @@
     </div>
   </section>
 
-  <!-- SECCIÓN BIFURCADA: ARQUITECTURA DEL DISEÑO Y DESARROLLO DEL SISTEMA -->
+  <!-- 08. ARQUITECTURA DEL SISTEMA -->
   <section id="section-arquitectura" class="section-pad">
     <div class="fundamento-layout">
       <div class="fundamento-sticky">
         <p class="section-label reveal">Arquitectura del diseño y desarrollo del sistema</p>
         <div style="margin-top: 40px; display: flex; justify-content: flex-start; max-width: 280px;">
-          <img src="assets/ElimfondosppAMF.png" alt="Herramientas del Ecosistema" style="width: 100%; height: auto; object-fit: contain;" class="reveal reveal-d1">
+          <img src="assets/ElimfondosppAMF.png" alt="Herramientas del Ecosistema" style="width: 100%; height: auto; object-fit: contain;" class="reveal reveal-d1"/>
         </div>
       </div>
       
@@ -229,24 +249,23 @@
       </div>
     </div>
   </section>
-  
-  <!-- CORREGIDO: Ajustada la clase contenedora a section-pad para homogeneizar proporciones y abarcar la pantalla -->
+
+  <!-- 09. PARTITURA DE INTERACCIÓN INTERFAZ DIGITAL (MOVIDA AQUÍ PARA CORREGIR EL ANCLA 09) -->
   <section id="section-partitura-dos" class="section-pad">
     <p class="section-label reveal">Partitura de interacción interfaz digital</p>
-
-    <!-- Contenedor Partitura 2 -->
     <div class="partitura-wrapper reveal reveal-d2" style="margin-top: 40px;">
-      <iframe class="partitura-iframe" src="https://eadpucv.github.io/pix/#!/import/eyJ0aXRsZSI6IkNvbnN0cnV5ZW5kbyBsYSBJbmNlcnRpZHVtYnJlIGVuIGxvIGRpZ2l0YWwiLCJsYXlvdXQiOiJwaXgiLCJkZXNjcmlwdGlvbiI6IkV4cGVyaWVuY2lhIGRpZ2l0YWwgbGFuZGluZyBlIGludGVyZmF6IGV4cHJlc2l2YSBkZSBsYSByZSBpbnRlcnByZXRhY2nDs24gZGVsIGp1ZWdvIENvbmVjdGFuZG8uIiwic2NvcmVzIjpbW3sic3RlcF90aXRsZSI6IkxhbmRpbmciLCJ1c2VyIjoicGl4LXN1cnByaXNlZCBVaGgsIHRpZW5lIGRpdmVyc29zIGNvbG9yZXMsIGFkZW3DoXMgY2FyZ2EgZW4gYnVlbiB0aWVtcG8uIiwiZGlhbG9ndWUiOiJwaXgtY2xpY2sgRWwgdXN1YXJpbyBoYWNlIGNsaWNrIGVuIGVsIGxpbmsuIiwic3lzdGVtIjoicGl4LXByb2dyZXNzIENvbWllbnphIGxhIGNhcmdhIGF1dG9tw6F0aWNhIHBlcnNvbmFsaXphZGEgZGUgbGEgcMOhZ2luYS4iLCJub3RlIjoiIn0seyJzdGVwX3RpdGxlIjoiIiwidXNlciI6InBpeC1zbWlsaW5nIEludGVyZXNhbnRlLCB1bmEgcMOhZ2luYSBjb25zdHJ1aWRhIGVuIGNvbG9yIG5lZ3JvLiIsImRpYWxvZ3VlIjoicGl4LW1vdmUgRWwgdXN1YXJpbyBtdWV2ZSBlbCBjdXJzb3IiLCJzeXN0ZW0iOiJwaXgtZXhwYW5kIExhIHDDoWdpbmEgZ2VuZXJhIGNhbWJpb3MgY29uc3RhbnRlcyBkZSBlbGVtZW50b3MuIiwibm90ZSI6IiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtc3VycHJpc2VkIFdvdywgZGVtYXNpYWRhcyBjb3NhcyBvY3VycmllbmRvLCBhY2FibyBkZSBkZXNjdWJyaXIgdW4gb3JkZW4uIiwiZGlhbG9ndWUiOiJwaXgtY29tbWVudCBFbCBmdXNpb25hIGRvIGNvbW8gdW4gYWNvcmRlLiIsInN5c3RlbSI6InBpeC1wYWdlIEJpZnJ1Y2FjacOzbiBkZSBsYSBtdWVzdHJhIGVuIGVsIHNpdGlvLiIsIm5vdGUiOiJTZWNjacOzbiBleHBlcmltZW50YWwsIGNvbW8gZXMgZGUgbGVjdHVyYSBzZSBsZSBkaW8gdW5hIGZvcm1hIG3DoXMgY8OzbW9kYSBkZSBuYXZlZ2FjacOzbi4ifSx7InN0ZXBfdGl0bGUiOiIiLCJ1c2VyIjoicGl4LXN0YXJrIFBhc2EgZWwgY3Vyc29yIHZhcmlhcyB2ZWNlcyBwb3IgZWwgYm90w7JuIHBhcmEgYnJldmUgYW5pbWFjacOzbi4iLCJkaWFsb2d1ZSI6InBpeC1idXR0b24gUGFzYSBlbCBjdXJzb3IgdmFyaWFzIHZlY2VzIHBvciBlbCBib3TDb24gcGFyYSBicmV2ZSBhbmltYWNpw7NuLiIsInN5c3RlbSI6InBpeC1zd2l0Y2ggQWwgYXByZXRhciB0ZSByZWRpcmlnZSBhIGxhIGludGVyZmF6IGV4cHJlc2l2YS4iLCJub3RlIjoiQm90w7JuIHBhcmEgaW5pY2lhciBsYSBleHBlcmllbmNoYS4ifSx7InN0ZXBfdGl0bGUiOiJJbnRlcmZheiBleHByZXNpdmEiLCJ1c2VyIjoicGl4LXBlcnNvbiBNZSBndXN0YSBtdWNobyBxdWUgc2UgbWFudGVuZ2EgZWwgY3Vyc29yIiwiZGlhbG9ndWUiOiJwaXgtY2xpY2sgQ2xpY2sgZW4gZWwgYm90w7JuIGluaWNpYXIgZXhwZXJpZW5jaWEiLCJzeXN0ZW0iOiJwaXgtcHJvY2VzcyBFbCBib3TDs24gcmVhY2Npb25hIHkgY2FyZ2Egb3JkZW5hbmRvIGVsIHByaW1lciBtb21lbnRvLiIsIm5vdGUiOiIifSx7InN0ZXBfdGl0bGUiOiIiLCJ1c2VyIjoicGl4LWludHJpZ3VlZCBMYSBwbGF0YWZvcm1hIG1lIGRpY2UgcXVlIGhhZ2Egc2Nyb2xsIHkgaGF5IHVub3MgcHVudGl0b3MiLCJkaWFsb2d1ZSI6InBpeC10YXA1ZG93biBFbCB1c2VyaW8gcmVhbGl6YSBzY3JvbGwgeSBhcnJhc3RyYSBsYXMgcGllemFzIiwic3lzdGVtIjoicGl4LXRhcDV1cCBMYXMgcGllemFzIHNlIGVzcGFyY2VuIHBvciBsYSBwYW50YWxsYS4iLCJub3RlIjoiIn0seyJzdGVwX3RpdGxlIjoiIiwidXNlciI6InBpeC1oYXBweSBRdWUgZGl2ZXJ0aWRvLCBubyBoYWJpYSB2aXN0byBuYWRhIHBhcmVjaWRvISEgd29hYWgiLCJkaWFsb2d1ZSI6InBpeC1zZWxlY3QgVGUgc3VtZXJnZSBlbiBpbnRlcmFjY2nDs24gZmx1aWRhIGNvbnRyb2xhZGEuIiwic3lzdGVtIjoicGl4LWRlc2t0b3AgTGFzIHBpZXphcyBzZSBjb25lY3RhbiBhIGxvIGxhcmdvIGRlIGxhIHBhbnRhbGxhLiIsIm5vdGUiOiJGaW5hbGl6YSBjb24gbGEgY29uZXhpw7NuIGRlIHBpZXphcyB5IGFwYXJlY2UgbHVlZ28gbGEgcGFudGFsbGEgcGFyYSByZXBldGlyIGxhIGV4cGVyaWVuY2lhLiJ9XV19" width="100%" height="722" frameborder="0"></iframe>
+      <iframe class="partitura-iframe" src="https://eadpucv.github.io/pix/#!/import/eyJ0aXRsZSI6IkNvbnN0cnV5ZW5kbyBsYSBJbmNlcnRpZHVtYnJlIGVuIGxvIGRpZ2l0YWwiLCJsYXlvdXQiOiJwaXgiLCJkZXNjcmlwdGlvbiI6IkV4cGVyaWVuY2lhIGRpZ2l0YWwgbGFuZGluZyBlIGludGVyZmF6IGV4cHJlc2l2YSBkZSBsYSByZSBpbnRlcnByZXRhY2nDs24gZGVsIGp1ZWdvIENvbmVjdGFuZG8uIiwic2NvcmVzIjpbW3sic3RlcF90aXRsZSI6IkxhbmRpbmciLCJ1c2VyIjoicGl4LXN1cnByaXNlZCBVaGgsIHRpZW5lIGRpdmVyc29zIGNvbG9yZXMsIGFkZW3DoXMgY2FyZ2EgZW4gYnVlbiB0aWVtcG8uIiwiZGlhbG9ndWUiOiJwaXgtY2xpY2sgRWwgdXN1YXJpbyBoYWNlIGNsaWNrIGVuIGVsIGxpbmsuIiwic3lzdGVtIjoicGl4LXByb2dyZXNzIENvbWllbnphIGxhIGNhcmdhIGF1dG9tw6F0aWNhIHBlcnNvbmFsaXphZGEgZGUgbGEgcMOhZ2luYS4iLCJub3RlIjoiIn0seyJzdGVwX3RpdGxlIjoiIiwidXNlciI6InBpeC1zbWlsaW5nIEludGVyZXNhbnRlLCB1bmEgcMOhZ2luYSBjb25zdHJ1aWRhIGVuIGNvbG9yIG5lZ3JvLiIsImRpYWxvZ3VlIjoicGl4LW1vdmUgRWwgdXN1YXJpbyBtdWV2ZSBlbCBjdXJzb3IiLCJzeXN0ZW0iOiJwaXgtZXhwYW5kIExhIHDDoWdpbmEgZ2VuZXJhIGNhbWJpb3MgY29uc3RhbnRlcyBkZSBlbGVtZW50b3MuIiwibm90ZSI6IiJ9LHsic3RlcF90aXRsZSI6IiIsInVzZXIiOiJwaXgtc3VycHJpc2VkIFdvdywgZGVtYXNpYWRhcyBjb3NhcyBvY3VycmllbmRvLCBhY2FibyBkZSBkZXNjdWJyaXIgdW4gb3JkZW4uIiwiZGlhbG9ndWUiOiJwaXgtY29tbWVudCBFbCBmdXNpb25hIGRvIGNvbW8gdW4gYWNvcmRlLiIsInN5c3RlbSI6InBpeC1wYWdlIEJpZnJ1Y2FjacOzbiBkZSBsYSBtdWVzdHJhIGVuIGVsIHNpdGlvLiIsIm5vdGUiOiJTZWNjacOzbiBleHBlcmltZW50YWwsIGNvbW8gZXMgZGUgbGVjdHVyYSBzZSBsZSBkaW8gdW5hIGZvcm1hIG3DoXMgY8OzbW9kYSBkZSBuYXZlZ2FjacOzbi4ifSx7InN0ZXBfdGl0bGUiOiIiLCJ1c2VyIjoicGl4LXN0YXJrIFBhc2EgZWwgY3Vyc29yIHZhcmlhcyB2ZWNlcyBwb3IgZWwgYm90w7JuIHBhcmEgYnJldmUgYW5pbWFjacOzbi4iLCJkaWFsb2d1ZSI6InBpeC1idXR0b24gUGFzYSBlbCBjdXJzb3IgdmFyaWFzIHZlY2VzIHBvciBlbCBib3TDb24gcGFyYSBicmV2ZSBhbmltYWNpw7NuLiIsInN5c3RlbSI6InBpeC1zdWl0Y2ggQWwgYXByZXRhciB0ZSByZWRpcmlnZSBhIGxhIGludGVyZmF6IGV4cHJlc2l2YS4iLCJub3RlIjoiQm90w7JuIHBhcmEgaW5pY2lhciBsYSBleHBlcmllbmNoYS4ifSx7InN0ZXBfdGl0bGUiOiJJbnRlcmZheiBleHByZXNpdmEiLCJ1c2VyIjoicGl4LXBlcnNvbiBNZSBndXN0YSBtdWNobyBxdWUgc2UgbWFudGVuZ2EgZWwgY3Vyc29yIiwiZGlhbG9ndWUiOiJwaXgtY2xpY2sgQ2xpY2sgZW4gZWwgYm90w7JuIGluaWNpYXIgZXhwZXJpZW5jaWEiLCJzeXN0ZW0iOiJwaXgtcHJvY2VzcyBFbCBib3TDs24gcmVhY2Npb25hIHkgY2FyZ2Egb3JkZW5hbmRvIGVsIHByaW1lciBtb21lbnRvLiIsIm5vdGUiOiIifSx7InN0ZXBfdGl0bGUiOiIiLCJ1c2VyIjoicGl4LWludHJpZ3VlZCBMYSBwbGF0YWZvcm1hIG1lIGRpY2UgcXVlIGhhZ2Egc2Nyb2xsIHkgaGF5IHVub3MgcHVudGl0b3MiLCJkaWFsb2d1ZSI6InBpeC10YXA1ZG93biBFbCB1c2VyaW8gcmVhbGl6YSBzY3JvbGwgeSBhcnJhc3RyYSBsYXMgcGllemFzIiwic3lzdGVtIjoicGl4LXRhcDV1cCBMYXMgcGllemFzIHNlIGVzcGFyY2VuIHBvciBsYSBwYW50YWxsYS4iLCJub3RlIjoiIn0seyJzdGVwX3RpdGxlIjoiIiwidXNlciI6InBpeC1oYXBweSBRdWUgZGl2ZXJ0aWRvLCBubyBoYWJpYSB2aXN0byBuYWRhIHBhcmVjaWRvISEgd29hYWgiLCJkaWFsb2d1ZSI6InBpeC1zZWxlY3QgVGUgc3VtZXJnZSBlbiBpbnRlcmFjY2nDs24gZmx1aWRhIGNvbnRyb2xhZGEuIiwic3lzdGVtIjoicGl4LWRlc2t0b3AgTGFzIHBpZXphcyBzZSBjb25lY3RhbiBhIGxvIGxhcmdvIGRlIGxhIHBhbnRhbGxhLiIsIm5vdGUiOiJGaW5hbGl6YSBjb24gbGEgY29uZXhpw7NuIGRlIHBpZXphcyB5IGFwYXJlY2UgbHVlZ28gbGEgcGFudGFsbGEgcGFyYSByZXBldGlyIGxhIGV4cGVyaWVuY2lhLiJ9XV19" frameborder="0"></iframe>
     </div>
   </section>
 
+  <!-- 10. REFERENCIAS (AHORA TIENE LA CORRESPONDENCIA CORRECTA DE FILA AL FINAL) -->
   <section id="section-referencias" class="section-referencias section-pad">
     <p class="section-label reveal">Referencias</p>
     <div class="refs-container reveal reveal-d1">
       
       <div class="ref-item">
         <a href="https://wiki.ead.pucv.cl/Conectando" target="_blank" class="ref-qr-wrapper">
-          <img src="assets/CONECTANDOPAGE.png" alt="QR Repositorio Conectando" class="ref-qr">
+          <img src="assets/CONECTANDOPAGE.png" alt="QR Repositorio Conectando" class="ref-qr"/>
         </a>
         <div class="ref-text">
           <span class="ref-title">Experiencia Conectando</span>
@@ -256,7 +275,7 @@
 
       <div class="ref-item">
         <a href="https://wiki.ead.pucv.cl/U3_Taller_IxD_-_Annelys_Mendez_Feliz" target="_blank" class="ref-qr-wrapper">
-          <img src="assets/PERSONALPAGE.png" alt="QR Portafolio Personal" class="ref-qr">
+          <img src="assets/PERSONALPAGE.png" alt="QR Portafolio Personal" class="ref-qr"/>
         </a>
         <div class="ref-text">
           <span class="ref-title">Wiki Casiopea Personal</span>
@@ -269,8 +288,8 @@
 
   <footer id="site-footer">
     <div class="footer-logos">
-      <img src="assets/LOGO PUCV PCS BLANCO.png" alt="Pontificia Universidad Católica de Valparaíso" class="footer-logo">
-      <img src="assets/Ead_logo_fondo_2019_color.png" alt="Escuela de Arquitectura y Diseño e[ad]" class="footer-logo">
+      <img src="assets/LOGO PUCV PCS BLANCO.png" alt="Pontificia Universidad Católica de Valparaíso" class="footer-logo"/>
+      <img src="assets/Ead_logo_fondo_2019_color.png" alt="Escuela de Arquitectura y Diseño e[ad]" class="footer-logo"/>
     </div>
     
     <div class="footer-text-block">
@@ -285,5 +304,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
   <script src="script.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".custom-speed-video").forEach(video => {
+        video.playbackRate = 1.35;
+      });
+    });
+  </script>
 </body>
 </html>

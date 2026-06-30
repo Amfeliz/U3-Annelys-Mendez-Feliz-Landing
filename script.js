@@ -134,12 +134,13 @@ function initSiteAnimations() {
     });
   });
 
-  // 4. HEADER DOTS SINCRO (Sincronización de las secciones incluyendo la duplicada)
+  // 4. HEADER DOTS SINCRO (FIX: Mapeo reordenado para coincidir 100% con la estructura del HTML)
   const SECTIONS = [
     'section-hero',
     'section-fundamento',
     'section-conceptos',
     'section-galeria',
+    'section-videos',
     'section-partitura',
     'section-interfaz-expresiva',
     'section-arquitectura',
